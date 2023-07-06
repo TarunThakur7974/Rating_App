@@ -45,7 +45,7 @@ let generateRating = (e) => {
     let cards = document.createElement('div')
     cards.className = 'cards';
     cards.innerHTML += `<p  class="rating bgclass">${ratingValue}</p> 
-    <p class="Feedback" contenteditable="true">${inputFeed.value}</p>
+    <p class="Feedback"  contenteditable="true">${inputFeed.value}</p>
     <button class="btn" id="deletebtn">X</button>`
     dataDiv.className = "divStyle"
     dataDiv.append(cards)
