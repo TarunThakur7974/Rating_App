@@ -1,0 +1,272 @@
+* {
+    padding: 0px;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+
+    padding: 15px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 20px;
+}
+
+nav h1 {
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.main {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.containerOne {
+    margin: 15px;
+    box-shadow: 0px 0px 3px 2px gray;
+    border: 2px solid black;
+    width: 100%;
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.containerOne h2 {
+    margin: 15px;
+    font-size: 2rem;
+}
+
+
+ul {
+    margin: 15px;
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+li {
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    color: black;
+    background-color: #80808033;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.inputDiv {
+    border-radius: 20px;
+    margin: 20px;
+    width: 80%;
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+input {
+    margin: 15px;
+    outline: none;
+    border: none;
+    width: 80%;
+    padding: 10px;
+    font-size: 22px;
+    background-color: transparent;
+}
+
+.sendbtn {
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 18px;
+    margin: 15px;
+    background-color: navy;
+    color: white;
+    font-size: 22px;
+}
+
+#deletebtn {
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 10px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-weight: bold;
+    background-color: tomato;
+    color: white;
+}
+
+#deletebtn:hover{
+background-color: gray;
+}
+#deletebtn:active{
+background-color: black;
+}
+.sendbtn:hover {
+    background-color: black;
+    color: white;
+}
+
+.sendbtn:active {
+    background-color: gray;
+    color: white;
+}
+
+.containerTwo {
+    width: 100%;
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    color: #000000ad;
+    margin-left: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 3px 2px gray;
+    margin: 15px;
+    min-height: 80px;
+    /* border: 2px solid black; */
+}
+
+.cards p {
+    font-size: 2rem;
+}
+
+.divStyle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    /* border: 2px solid black; */
+}
+
+.rating{
+    position: relative;
+    top: -35px;
+    left: -24px;
+    
+}
+
+.bgclass {
+    background-color:#f7a531;
+    color: aliceblue;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.containerTwo p{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+@media (max-width:550px) {
+    nav h1 {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+
+    .containerOne {
+        gap: 15px;
+    }
+
+    .containerOne h2 {
+        text-align: center;
+        margin: 15px;
+        font-size: 1.2rem;
+    }
+
+    ul {
+        width: 100%;
+    }
+
+    .main {
+        width: 95%;
+    }
+
+    .sendbtn {
+        margin: 4px;
+        padding: 5px;
+        font-size: 20px;
+    }
+
+    input {
+        font-size: 20px;
+        padding: 5px;
+        margin: 4px;
+    }
+
+    .inputDiv {
+        width: 95%;
+    }
+}
+
+@media (max-width:740px) {
+    nav h1 {
+        font-size: 2rem;
+    }
+
+    ul {
+        width: 88%;
+    }
+    .cards p{
+        font-size: 1.5rem;
+    }
+    li{
+        font-size: 1.4rem;
+    }
+    .cards{
+        margin: 5px;
+    }
+
+    .containerOne h2 {
+        text-align: center;
+        margin: 15px;
+        font-size: 1.8rem;
+    }
+}
