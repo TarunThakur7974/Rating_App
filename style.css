@@ -185,7 +185,6 @@ background-color: black;
     position: relative;
     top: -35px;
     left: -24px;
-    
 }
 
 .bgclass {
@@ -209,8 +208,6 @@ background-color: black;
         font-size: 1rem;
         text-align: center;
     }
-
-
     .containerOne {
         gap: 15px;
     }

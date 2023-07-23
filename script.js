@@ -14,20 +14,22 @@ let lilength = ul.children.length - 1
 li[lilength].classList.add('bgclass');
 
 let pickRating = (e) => {
-    Array.from(li).forEach(() => {
-        ratingValue = e.target.innerText
-
-        ratingValue = Number(ratingValue)
-
-        if (e.target.classList.contains('listitems')) {
-            e.target.classList.add('bgclass')
-        }
-        i += 1
-        if (li[i - 1].classList.contains('bgclass')) {
-            li[i - 1].classList.remove('bgclass');
-
-        }
-    });
+    if (e.target.classList.contains('listitems')) {
+        
+        Array.from(li).forEach(() => {
+            ratingValue = e.target.innerText
+            
+            ratingValue = Number(ratingValue)
+            
+            i += 1
+            if (li[i - 1].classList.contains('bgclass')) {
+                li[i - 1].classList.remove('bgclass');
+                
+            }
+            
+        })
+        e.target.classList.add('bgclass')
+    };
 
     i = 0
     inputFeed.focus();
@@ -40,12 +42,11 @@ ul.addEventListener('click', pickRating)
 let generateRating = (e) => {
     e.preventDefault();
     sum += ratingValue;
-    avgRating.innerText = `Average Rating : ${(sum / (dataDiv.children.length + 1)).toFixed(2)}`
     reviews.innerText = `${dataDiv.children.length + 1} Revives`
     let cards = document.createElement('div')
     cards.className = 'cards';
     cards.innerHTML += `<p  class="rating bgclass">${ratingValue}</p> 
-    <p class="Feedback">${inputFeed.value}</p>
+    <p class="Feedback"  contenteditable="true">${inputFeed.value}</p>
     <button class="btn" id="deletebtn">X</button>`
     dataDiv.className = "divStyle"
     dataDiv.append(cards)
@@ -55,6 +56,7 @@ let generateRating = (e) => {
         e.classList.remove('bgclass')
     })
     li[lilength].classList.add('bgclass');
+    avgFunc();
 }
 
 dataDiv.addEventListener('click', (e) => {
@@ -67,26 +69,29 @@ dataDiv.addEventListener('click', (e) => {
         listItem.remove();
 
         reviews.innerText = `${dataDiv.children.length} Revives`
-        let cards = document.querySelectorAll('.cards');
-        minusrating = 0;
-        minusratingdemo = 0;
-        console.log(cards)
-        cards.forEach((elem) => {
-            let data = elem.querySelectorAll('.rating')
-            data.forEach((element) => {
-                minusrating += Number(element.innerText)
-                console.log(minusrating)
-            })
+        avgFunc();
+        if(dataDiv.children.length === 0){
+            avgRating.innerText = 'Average Rating : '  + '00'
+        } 
 
-        })
-        avgRating.innerText = `Average Rating : ${(minusrating / dataDiv.children.length).toFixed(2)}`
-        if (cards.length === 0 ) {
-            location.reload();
-        }
     }
-
 }
 )
+
+let avgFunc = ()=>{
+    let cards = document.querySelectorAll('.cards');
+    minusrating = 0;
+    minusratingdemo = 0;
+    cards.forEach((elem) => {
+        let data = elem.querySelectorAll('.rating')
+        data.forEach((element) => {
+            minusrating += Number(element.innerText)
+        })
+
+    })
+
+    avgRating.innerText = `Average Rating : ${(minusrating / dataDiv.children.length).toFixed(2)}`
+}
 
 form.addEventListener('submit', generateRating)
 
