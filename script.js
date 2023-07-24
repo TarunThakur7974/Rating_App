@@ -36,13 +36,13 @@ let pickRating = (e) => {
 }
 
 
-reviews.innerText = `${dataDiv.children.length} Revives`
+reviews.innerText = `${dataDiv.children.length} Reviews`
 ul.addEventListener('click', pickRating)
 
 let generateRating = (e) => {
     e.preventDefault();
     sum += ratingValue;
-    reviews.innerText = `${dataDiv.children.length + 1} Revives`
+    reviews.innerText = `${dataDiv.children.length + 1} Reviews`
     let cards = document.createElement('div')
     cards.className = 'cards';
     cards.innerHTML += `<p  class="rating bgclass">${ratingValue}</p> 
@@ -68,7 +68,7 @@ dataDiv.addEventListener('click', (e) => {
         let listItem = e.target.parentNode;
         listItem.remove();
 
-        reviews.innerText = `${dataDiv.children.length} Revives`
+        reviews.innerText = `${dataDiv.children.length} Reviews`
         avgFunc();
         if(dataDiv.children.length === 0){
             avgRating.innerText = 'Average Rating : '  + '00'
